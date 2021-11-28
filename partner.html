@@ -107,7 +107,124 @@
         </div>
     
     </section>
+    <section class="modal js-modal">
+        <div class="modal-container js-modal-container">
+            <form name="myform" action = "" method = "POST" class= "form needs-validation" id = "form-1" novalidate>
+                <div class="modal-close js-modal-close">
+                    <i class="fas fa-times"></i>
+                </div>
+    
+                <header class="modal-header">
+                    <i class="modal-heading-icon fas fa-concierge-bell"> Booking</i>
+                </header>
+    
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col form-group">
+                            <label for="name" class="modal-label">
+                                <i class="fas fa-male"></i>
+                                Name
+                            </label>
+                            <input name="name" id="name" type="text"  class="model-input form-control" placeholder="Name" required>
+                            <div class="invalid-feedback">
+                                Vui lòng không để trống trường này !
+                            </div>
+                        </div>
+                        <div class="col form-group">
+                            <label for="phone" class="modal-label">
+                                <i class="fas fa-phone-alt"></i>
+                                Phone
+                            </label>
+                            <input id="phone" type="tel"  class="model-input form-control" placeholder="Phone" pattern="[0-9]{10}" required>
+                            <div class="invalid-feedback">
+                                Vui lòng không để trống trường này !
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col form-group">
+                            <label for ="email" class="modal-label">
+                                <i class="fas fa-envelope"></i>
+                                Email
+                            </label>
+                            <input id="email" type="email" class="model-input form-control" placeholder="Email" required>
+                            <div class="invalid-feedback">
+                                Vui lòng không để trống trường này !
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col form-group">
+                            <label for= "number1" class="modal-label">
+                                <i class="fas fa-user"></i>
+                                Number of adults
+                            </label>
+                            <input id="number1" type="number" class="model-input form-control"  min="0" max="50" step="1" value="1" >
+                        </div>
+                        <div class="col form-group">
+                            <label for = "number2" class="modal-label">
+                                <i class="fas fa-child"></i>
+                                Number of childrens
+                            </label>
+                            <input id="number2" type="number" class="model-input form-control"  min="0" max="30" step="1" value="0" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col form-group">
+                            <label for="date" class="modal-label">
+                                <i class="far fa-calendar-alt"></i>
+                                Booking date
+                            </label>
+                            <input id="date" type="datetime-local" class="model-input form-control" name="Booking date " required>
+                            <div class="invalid-feedback">
+                                Vui lòng không để trống trường này !
+                            </div>
+                        </div>
+                        <div class="col form-group">
+                            <label for= "time" class="modal-label">
+                                <i class="fas fa-clock"></i>
+                                Set hours
+                            </label>
+                            <input id="time" type="time" class="model-input form-control" name="time" required>
+                            <div class="invalid-feedback">
+                                Vui lòng không để trống trường này !
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <input id ="booking" type="submit" value="submit">
+                </div>
+    
+                <footer class="modal-footer">
+                    <p class="modal-help">Need<a href="">help?</a></p>
+                </footer>
+            </form>
+        </div>
+    </section>
+    
+    
+    
     <script src="script.js"></script>
     <script src="script1.js"></script>
+    
+    
+    <script>
+        (function() {
+            'use strict';
+            window.addEventListener('load', function() {
+                var forms = document.getElementsByClassName('needs-validation');
+                var validation = Array.prototype.filter.call(forms, function(form) {
+                    form.addEventListener('submit', function(event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    </script>
 </body>
 </html>
